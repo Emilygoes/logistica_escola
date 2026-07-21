@@ -1,0 +1,135 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def inicio():
+    return {"mensagem": "API da Escola funcionando!"}
+
+ALUNOS
+@app.get("/alunos")
+def listar_alunos():
+    return {"mensagem": "Lista de alunos"}
+
+@app.get("/alunos/{id}")
+def buscar_aluno(id: int):
+    return {"mensagem": f"Aluno {id}"}
+
+@app.post("/alunos")
+def cadastrar_aluno(aluno: dict):
+    return aluno
+
+@app.put("/alunos/{id}")
+def atualizar_aluno(id: int, aluno: dict):
+    return {"id": id, "dados": aluno}
+
+@app.delete("/alunos/{id}")
+def excluir_aluno(id: int):
+    return {"mensagem": f"Aluno {id} excluído"}
+
+@app.get("/professores")
+def listar_professores():
+    return {"mensagem": "Lista de professores"}
+
+PROFESSORES
+@app.get("/professores/{id}")
+def buscar_professor(id: int):
+    return {"id": id}
+
+@app.post("/professores")
+def cadastrar_professor(professor: dict):
+    return professor
+
+@app.put("/professores/{id}")
+def atualizar_professor(id: int, professor: dict):
+    return {"id": id, "dados": professor}
+
+@app.delete("/professores/{id}")
+def excluir_professor(id: int):
+    return {"mensagem": "Professor removido"}
+
+
+TURMAS
+@app.get("/turmas")
+def listar_turmas():
+    return {"mensagem": "Lista de turmas"}
+
+@app.get("/turmas/{id}")
+def buscar_turma(id: int):
+    return {"id": id}
+
+@app.post("/turmas")
+def cadastrar_turma(turma: dict):
+    return turma
+
+@app.put("/turmas/{id}")
+def atualizar_turma(id: int, turma: dict):
+    return {"id": id, "dados": turma}
+
+@app.delete("/turmas/{id}")
+def excluir_turma(id: int):
+    return {"mensagem": "Turma removida"}
+
+
+DISCIPLINAS
+@app.get("/disciplinas")
+def listar_disciplinas():
+    return {"mensagem": "Lista de disciplinas"}
+
+@app.get("/disciplinas/{id}")
+def buscar_disciplina(id: int):
+    return {"id": id}
+
+@app.post("/disciplinas")
+def cadastrar_disciplina(disciplina: dict):
+    return disciplina
+
+@app.put("/disciplinas/{id}")
+def atualizar_disciplina(id: int, disciplina: dict):
+    return {"id": id, "dados": disciplina}
+
+@app.delete("/disciplinas/{id}")
+def excluir_disciplina(id: int):
+    return {"mensagem": "Disciplina removida"}
+
+GRADE HORARIA
+@app.get("/grades")
+def listar_grades():
+    return {"mensagem": "Lista das grades"}
+
+@app.get("/grades/{id}")
+def buscar_grade(id: int):
+    return {"id": id}
+
+@app.post("/grades")
+def cadastrar_grade(grade: dict):
+    return grade
+
+@app.put("/grades/{id}")
+def atualizar_grade(id: int, grade: dict):
+    return {"id": id, "dados": grade}
+
+@app.delete("/grades/{id}")
+def excluir_grade(id: int):
+    return {"mensagem": "Grade removida"}
+
+MATRICULAS
+@app.get("/matriculas")
+def listar_matriculas():
+    return {"mensagem": "Lista de matrículas"}
+
+@app.get("/matriculas/{id}")
+def buscar_matricula(id: int):
+    return {"id": id}
+
+@app.post("/matriculas")
+def cadastrar_matricula(matricula: dict):
+    return matricula
+
+@app.put("/matriculas/{id}")
+def atualizar_matricula(id: int, matricula: dict):
+    return {"id": id, "dados": matricula}
+
+@app.delete("/matriculas/{id}")
+def excluir_matricula(id: int):
+    return {"mensagem": "Matrícula removida"}
