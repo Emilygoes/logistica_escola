@@ -59,3 +59,20 @@ def disciplina():
         "carga_horaria": "80",
         "ementa": "Modelagem de Banco de Dados"
     }
+
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def leituraRota():
+    return {"mensagem:""Primeira nota rodando!"}
+
+@app.get("/sobre")
+def sobre():
+    return{"nome:""Milizoka""Curso:""Jovem programador"}
+
+app.get("/sobre/{nome}")
+def sobrePersonalizado(nome:str):
+    return{"mensagem:" f"Olá,{nome}! bem vindo a Jovem Programador!"}
